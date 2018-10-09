@@ -60,9 +60,9 @@ class UrlTester(val inputFileContent: List<String>, val fromInclusive: Int, val 
         val oldEntry = lines[index]
         if (oldEntry.temporaryUrl != null) {
             val text = HTTP.get(oldEntry.temporaryUrl).getText()
-            lines[index] = oldEntry.copy(resultUrl = text)
+            lines[index] = oldEntry.copy(httpResult = text)
         } else {
-            lines[index] = oldEntry.copy(resultUrl = "N/A")
+            lines[index] = oldEntry.copy(httpResult = "N/A")
         }
         counterTick()
     }

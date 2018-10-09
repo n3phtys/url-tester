@@ -23,7 +23,7 @@ class TestCommand : CliktCommand() {
         //transform input into correct values and call UrlTester
         val inputFileContent: List<String> = inputFile.readLines(Charsets.UTF_8).filter { it.isNotBlank() }
         val fromInclusive: Int = this.fromInclusive?:0
-        val toExclusive: Int = this.toExclusive?:inputFileContent.size
+        val toExclusive: Int = this.toExclusive?:(inputFileContent.size)
         val outputFile: File = this.outputFile
         if (!outputFile.exists()) {
             outputFile.createNewFile()
